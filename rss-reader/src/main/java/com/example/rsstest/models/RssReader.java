@@ -9,6 +9,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rometools.rome.feed.synd.SyndFeed;
@@ -18,6 +19,9 @@ import com.rometools.rome.io.XmlReader;
 
 @Service
 public class RssReader {
+	
+	@Autowired
+	GetRedirect getredirect;
 	
 	public SyndFeed readRss(String url) {
 		
@@ -30,8 +34,24 @@ public class RssReader {
 		    InputStream stream1 = response1.getEntity().getContent();
 		    SyndFeedInput input = new SyndFeedInput();
 		    
-		    feed = input.build(new XmlReader(stream1));
-			//feed = new SyndFeedInput().build(new XmlReader(new URL(url)));
+		    try {
+		    	feed = input.build(new XmlReader(stream1));
+		    } catch (FeedException e1) {
+		    	//redirect
+		    	url = getredirect.GetUrl(url);
+		    	
+		    	CloseableHttpClient client2 = HttpClients.createMinimal();
+			    HttpUriRequest method2 = new HttpGet(url);
+			    CloseableHttpResponse response2 = client2.execute(method2);
+			    InputStream stream2 = response2.getEntity().getContent();
+			    
+			    try {
+			    	feed = input.build(new XmlReader(stream2));
+			    } catch (FeedException e2) {
+			    	//unicode
+			    	e2.printStackTrace();
+			    }
+		    }
 		    
 		    stream1.close();
 		    response1.close();
@@ -41,9 +61,6 @@ public class RssReader {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		} catch (MalformedURLException e) {
-			// TODO 自動生成された catch ブロック
-			e.printStackTrace();
-		} catch (FeedException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		} catch (IOException e) {

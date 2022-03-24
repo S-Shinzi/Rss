@@ -51,6 +51,11 @@ public class RssReader {
 			    	//unicode
 			    	e2.printStackTrace();
 			    }
+			    
+			    stream2.close();
+			    response2.close();
+			    client2.close();
+			    
 		    }
 		    
 		    stream1.close();

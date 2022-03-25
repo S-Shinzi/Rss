@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.rsstest.domains.RssModel;
-import com.example.rsstest.domains.SiteJoin;
+import com.example.rsstest.domains.Site;
 
 @Component
 public class RssStoreMap {
@@ -19,7 +19,7 @@ public class RssStoreMap {
 	@Autowired
 	private RssReader rssReader;
 
-	public Map<String, List<RssModel>> SiteMap(List<SiteJoin> sites) {
+	public Map<String, List<RssModel>> SiteMap(List<Site> sites) {
 		Map<String, List<RssModel>> siteMap = new HashMap<>();
 		
 		

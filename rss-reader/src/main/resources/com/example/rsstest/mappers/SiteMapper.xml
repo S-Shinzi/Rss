@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.rsstest.mappers.SiteJoinMapper">
+<mapper namespace="com.example.rsstest.mappers.SiteMapper">
     <!-- 結果と結果を受け取るクラスの紐づけ -->
-    <resultMap id="SiteJoinResultMap" type="com.example.rsstest.domains.SiteJoin">
+    <resultMap id="SiteResultMap" type="com.example.rsstest.domains.Site">
       <result property="id" column="id" />
       <result property="name" column="name"/>
       <result property="rss_link" column="uq_rss_link"/>
       <result property="type_id" column="type_id"/>
-      <result property="type" column="type"/>
+      <result property="created_at" column="created_at"/>
+      <result property="updated_at" column="updated_at"/>
     </resultMap>
     <!-- SQL -->
-    <select id="all" resultMap="SiteJoinResultMap">
-        select sites.id, sites.name, sites.uq_rss_link, sites.type_id, site_types.type from sites inner join site_types on sites.type_id = site_types.id;
+    <select id="all" resultMap="SiteResultMap">
+        select * from sites;
     </select>
 </mapper>

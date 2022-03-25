@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.rsstest.domains.RssModel;
-import com.example.rsstest.domains.SiteJoin;
-import com.example.rsstest.mappers.SiteJoinMapper;
+import com.example.rsstest.domains.Site;
+import com.example.rsstest.mappers.SiteMapper;
 import com.example.rsstest.models.RssStoreMap;
 
 @Controller
 public class RssApiController {
 	
-	private final SiteJoinMapper siteJoinMapper;
+	private final SiteMapper siteJoinMapper;
 	
 	@Autowired
-	public RssApiController(SiteJoinMapper siteJoinMapper) {
+	public RssApiController(SiteMapper siteJoinMapper) {
 		this.siteJoinMapper = siteJoinMapper;
 	}
 	
@@ -29,7 +29,7 @@ public class RssApiController {
 	@GetMapping("/api/rss")
 	@ResponseBody
 	public Map<String, List<RssModel>> returnRss(){
-		List<SiteJoin> sites = siteJoinMapper.all();
+		List<Site> sites = siteJoinMapper.all();
 		Map<String, List<RssModel>> map = rssStoreMap.SiteMap(sites);
 		return map;
 	}

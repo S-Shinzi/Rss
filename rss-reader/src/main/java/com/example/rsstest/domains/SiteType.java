@@ -16,6 +16,10 @@ public class SiteType {
 		this.updated_at = updated_at;
 	}
 	
+	public SiteType(String type) {
+		this.type = type;
+	}
+	
 	public int getId() {
 		return id;
 	}

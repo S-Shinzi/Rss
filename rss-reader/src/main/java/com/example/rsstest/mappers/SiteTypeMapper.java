@@ -9,4 +9,5 @@ import com.example.rsstest.domains.SiteType;
 @Mapper
 public interface SiteTypeMapper {
 	List<SiteType> all();
+	void add(SiteType siteType);
 }

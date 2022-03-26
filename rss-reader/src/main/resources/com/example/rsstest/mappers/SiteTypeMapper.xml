@@ -11,4 +11,7 @@
     <select id="all" resultMap="SiteTypeResultMap">
         select * from site_types;
     </select>
+    <insert id="add" parameterType="com.example.rsstest.domains.SiteType">
+    	insert into site_types(type) values (#{type});
+    </insert>
 </mapper>

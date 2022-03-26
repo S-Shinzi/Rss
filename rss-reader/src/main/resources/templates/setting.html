@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>RSS Test</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/css/costom.css" />
+	<script src="/js/setting.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>Setting</h1>
+		<div>
+			<h3>sites Table</h3>
+			<table class="table table-bordered border-primary">
+				<thead>
+					<tr>
+						<th scope="col">id</th>
+						<th scope="col">name</th>
+						<th scope="col">rss_link</th>
+						<th scope="col">type_id</th>
+						<th scope="col">created_at</th>
+						<th scope="col">updated_at</th>
+					</tr>
+				</thead>
+				<tbody id="siteList"></tbody>
+			</table>
+		</div>
+		<div>
+			<h3>site_type Table</h3>
+			<table class="table table-bordered border-primary">
+				<thead>
+					<tr>
+						<th scope="col">id</th>
+						<th scope="col">type</th>
+						<th scope="col">created_at</th>
+						<th scope="col">updated_at</th>
+					</tr>
+				</thead>
+				<tbody id="site_typeList"></tbody>
+			</table>
+		</div>
+	</div>
+</body>	
+</html>

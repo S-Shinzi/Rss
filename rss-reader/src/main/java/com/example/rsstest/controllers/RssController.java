@@ -10,4 +10,9 @@ public class RssController {
 	public String index() {
 		return "rss-test";
 	}
+	
+	@GetMapping("/setting")
+	public String setting() {
+		return "setting";
+	}
 }

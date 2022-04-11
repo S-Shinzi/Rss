@@ -25,7 +25,13 @@ public class RssStoreMap {
 		
 		for (int i=0; i<sites.size(); i++) {
 			//System.out.println(sites.get(i).getName());
-			siteMap.put(sites.get(i).getName(), rssConverter.rssModel(rssReader.readRss(sites.get(i).getRss_link())));
+			
+			List<RssModel> rssModel = rssConverter.rssModel(rssReader.readRss(sites.get(i).getRss_link()));
+			
+			if(rssModel.size() == 0) {
+			}else {
+				siteMap.put(sites.get(i).getName(), rssModel);
+			}
 		}
 		return siteMap;
 	}

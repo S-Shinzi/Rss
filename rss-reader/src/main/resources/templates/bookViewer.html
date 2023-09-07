@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" rel="stylesheet">
+    <link href="css/viewer/comi_style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/viewer/bookApp.js"></script>
+    <script src="js/viewer/wheelSlide.js"></script>
+	<title>Book Viewer</title>
+	<script>
+		//display variable (overwritable)
+		let display = 0;
+		let page = 0;
+	</script>
+</head>
+<body>
+	<div class="slider" dir="rtl">
+        <div id="first_page"></div>
+        <div id="last_page">
+            <div class="last_page_in" dir="ltr">
+                <div>
+                    <!--最終ページフリー追加ゾーンここから-->
+
+                    
+
+                    <!--最終ページフリー追加ゾーンここまで-->
+                </div>
+                <h1></h1>
+                <small>Copyright &copy; <span class="copy"></span> All Rights Reserved</small>
+                <!--最終ページにボタンを追加する場合は以下をコメントアウト解除して編集-->
+                <!--
+                <p>
+                    <a class="button" href="#">次の話へ</a>
+                    <a class="button" href="#">前の話へ</a>
+                </p>
+                -->
+                <p>
+                    <input type="button" value="もう一度読む" class="button b_button">
+                    <input type="button" value="サイトへ戻る" class="button o_button orange">
+                </p>
+            </div>
+        </div>
+    </div>
+	<div class="targetURI_elem">
+	    <form class="targetURI_form" action="/bookViewer" method="GET">
+	        <input class="text_form" type="text" name="url"autofocus>
+	        <input class="submit_form" type="submit" value="submit">
+	    </form>
+	    <input class="slide_form" id="slide_form" type="button" value="switch slide" onclick="switchSlide()"/>
+	</div>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+	<script src="js/viewer/comic.js"></script>
+</body>
+</html>

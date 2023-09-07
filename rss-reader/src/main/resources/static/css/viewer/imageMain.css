@@ -1,0 +1,98 @@
+body {
+	background-color: #111;
+	height: 100vh;
+	width: auto;
+	margin: 0;
+}
+
+li {
+	background-color: #111;
+	position: relative;
+	height: 100vh;
+	width: auto;
+	float: none;
+	margin: 0;
+}
+
+img {
+	background-color: #111;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+   	height: auto!important;
+   	width: auto!important;
+   	max-height: 100%;
+   	max-width: 100%;
+   	margin: auto;
+}
+
+
+.flexslider {
+	border: none!important;
+	background-color: #111;
+	margin:5px 0 0 0!important;
+}
+
+.flex-active-slide {
+	float: none;
+}
+
+.targetURI_elem {
+	position: absolute;
+	top: 0;
+	z-index: 20;
+}
+
+.targetURI_form {
+	margin: 0;
+	height: 24px;
+}
+
+.text_form {
+	height: 50%;
+	width: 100px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.removeJson_form {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 144px;
+}
+
+.removeJson_label {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 167px;
+	color: white;
+}
+
+.submit_form {
+	height: 100%;
+	width: 70px!important;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 116px;
+}
+
+.serchAscii2d {
+	position: absolute;
+	top: 0;
+	z-index: 20;
+	left: 260px;
+}
+
+.submit_serch {
+	position: absolute;
+    font-size: 12px;
+    top: 50%;
+    transform: translateY(3%);
+    left: -66px;
+}

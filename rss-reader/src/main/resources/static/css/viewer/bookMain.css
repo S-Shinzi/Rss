@@ -1,0 +1,28 @@
+@charset "UTF-8";
+.targetURI_elem {
+	position: absolute;
+	top: 0;
+	z-index: 20;
+}
+
+.targetURI_form {
+	margin: 0;
+	height: 24px;
+}
+
+.text_form {
+	height: 50%;
+	width: 100px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.submit_form {
+	height: 100%;
+	width: 1px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 116px;
+}

@@ -30,8 +30,7 @@ public class RssReader {
 	public SyndFeed readRss(String url) {
 		
 		SyndFeed feed = null;
-		System.out.println("url1: "+url);
-		System.out.println("userAgent"+httpHeader.getUserAgent());
+		
 		try {
 			CloseableHttpClient client1 = HttpClients.custom().setUserAgent(httpHeader.getUserAgent()).build();
 		    HttpUriRequest method1 = new HttpGet(url);
@@ -39,15 +38,11 @@ public class RssReader {
 		    InputStream stream1 = response1.getEntity().getContent();
 		    SyndFeedInput input = new SyndFeedInput();
 		    
-		    System.out.println("stream1");
-		    
 		    try {
 		    	feed = input.build(new XmlReader(stream1));
 		    } catch (FeedException e1) {
 		    	//redirect
 		    	url = getredirect.GetUrl(url);
-		    	System.out.println("stream2");
-		    	System.out.println("url2: "+url);
 		    	
 		    	CloseableHttpClient client2 = HttpClients.custom().setUserAgent(httpHeader.getUserAgent()).build();
 			    HttpUriRequest method2 = new HttpGet(url);
@@ -79,7 +74,6 @@ public class RssReader {
 			e.printStackTrace();
 		}
 		
-		//System.out.println(url);
 		return feed;
 	}
 }

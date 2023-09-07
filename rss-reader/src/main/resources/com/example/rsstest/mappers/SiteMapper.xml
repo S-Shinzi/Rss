@@ -6,12 +6,11 @@
       <result property="id" column="id" />
       <result property="name" column="name"/>
       <result property="rss_link" column="uq_rss_link"/>
-      <result property="type_id" column="type_id"/>
       <result property="created_at" column="created_at"/>
       <result property="updated_at" column="updated_at"/>
     </resultMap>
     <!-- SQL -->
     <select id="all" resultMap="SiteResultMap">
-        select * from sites;
+        SELECT * FROM sites;
     </select>
 </mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.rsstest.mappers.ParseMapper">
+    <!-- 結果と結果を受け取るクラスの紐づけ -->
+    <resultMap id="ParseResultMap" type="com.example.rsstest.domains.Parse">
+      <result property="id" column="id" />
+      <result property="site_id" column="site_id" />
+      <result property="element_parse" column="element_parse"/>
+      <result property="attribute_parse" column="attribute_parse"/>
+      <result property="created_at" column="created_at"/>
+      <result property="updated_at" column="updated_at"/>
+    </resultMap>
+    <!-- SQL -->
+    <select id="all" resultMap="ParseResultMap">
+        SELECT * FROM parses;
+    </select>
+    <select id="getParses" resultMap="ParseResultMap" parameterType="int">
+    	SELECT id, site_id, element_parse, attribute_parse FROM parses WHERE site_id = #{site_id};
+    </select>
+    <insert id="add" parameterType="com.example.rsstest.domains.Parse">
+        INSERT INTO parses(site_id, element_parse, attribute_parse) VALUES (#{site_id}, #{element_parse}, #{attribute_parse});
+    </insert>
+    <delete id="remove" parameterType="com.example.rsstest.domains.Parse">
+    	DELETE FROM parses WHERE id = #{id};
+    </delete>
+    <update id="update" parameterType="com.example.rsstest.domains.Parse">
+    	UPDATE parses SET site_id = #{site_id}, element_parse = #{element_parse}, attribute_parse = #{attribute_parse} WHERE id = #{id};
+    </update>
+</mapper>

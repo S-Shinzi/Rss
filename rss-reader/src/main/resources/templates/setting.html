@@ -2,23 +2,23 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>RSS Test</title>
+	<title>RSS Test - setting</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="/css/costom.css" />
-	<script src="/js/setting.js"></script>
+	<script src="/js/setting/sitesTable.js"></script>
+	<script src="/js/setting/parsesTable.js"></script>
 </head>
 <body>
 	<div class="container">
 		<h1>Setting</h1>
 		<div>
 			<h3>sites Table</h3>
-			<table class="table table-bordered border-primary">
+			<table class="table table-bordered">
 				<thead>
 					<tr>
 						<th scope="col">id</th>
 						<th scope="col">name</th>
 						<th scope="col">rss_link</th>
-						<th scope="col">type_id</th>
 						<th scope="col">created_at</th>
 						<th scope="col">updated_at</th>
 					</tr>
@@ -26,30 +26,33 @@
 				<tbody id="siteList"></tbody>
 			</table>
 		</div>
+		
 		<div>
-			<h3>site_type Table</h3>
-			<table class="table table-bordered border-primary">
+			<h3>parses Table</h3>
+			<table class="table table-bordered">
 				<thead>
 					<tr>
 						<th scope="col">id</th>
-						<th scope="col">type</th>
+						<th scope="col">site_id</th>
+						<th scope="col">element_parse</th>
+						<th scope="col">attribute_parse</th>
 						<th scope="col">created_at</th>
 						<th scope="col">updated_at</th>
 					</tr>
 				</thead>
-				<tbody id="site_typeList"></tbody>
+				<tbody id="parseList"></tbody>
+				<tbody>
+					<tr>
+						<td><form id="add-Parses" action="/api/db/add-parses" method="post"></form></td>
+						<td><input type="number" name="site_id" form="add-Parses" required/></td>
+						<td><input type="text" name="element_parse" form="add-Parses" required/></td>
+						<td><input type="text" name="attribute_parse" form="add-Parses" required/></td>
+						<td></td>
+						<td></td>
+						<td><input class="btn btn-primary" type="submit" value="Add" form="add-Parses"/></td>
+					</tr>
+				</tbody>
 			</table>
-	          <div>
-	            <form action="/setting/type" method="post">
-	              <div class="form-group">
-	                <label for="member_name">type</label>
-	                <input type="text" class="form-control" id="type_name" name="type_name" required />
-	              </div>
-	              <div class="text-right">
-	                <button class="btn btn-primary" type="submit">追加する</button>
-	              </div>
-	            </form>
-	          </div>
 		</div>
 	</div>
 </body>	

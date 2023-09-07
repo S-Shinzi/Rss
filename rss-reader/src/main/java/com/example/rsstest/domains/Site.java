@@ -1,6 +1,6 @@
 package com.example.rsstest.domains;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 public class Site {
 	
@@ -9,15 +9,13 @@ public class Site {
 	private int id;
 	private String name;
 	private String rss_link;
-	private int type_id;
-	private Date created_at;
-	private Date updated_at;
+	private LocalDateTime created_at;
+	private LocalDateTime updated_at;
 	
-	public Site(int id, String name, String rss_link, int type_id, Date created_at, Date updated_at) {
+	public Site(int id, String name, String rss_link, LocalDateTime created_at, LocalDateTime updated_at) {
 		this.id = id;
 		this.name = name;
 		this.rss_link = rss_link;
-		this.type_id = type_id;
 		this.created_at = created_at;
 		this.updated_at = updated_at;
 	}
@@ -45,28 +43,20 @@ public class Site {
 	public void setRss_link(String rss_link) {
 		this.rss_link = rss_link;
 	}
-	
-	public int getType_id() {
-		return type_id;
-	}
-	
-	public void setType_id(int type_id) {
-		this.type_id = type_id;
-	}
 
-	public Date getCreated_at() {
+	public LocalDateTime getCreated_at() {
 		return created_at;
 	}
 
-	public void setCreated_at(Date created_at) {
+	public void setCreated_at(LocalDateTime created_at) {
 		this.created_at = created_at;
 	}
 
-	public Date getUpdated_at() {
+	public LocalDateTime getUpdated_at() {
 		return updated_at;
 	}
 
-	public void setUpdated_at(Date updated_at) {
+	public void setUpdated_at(LocalDateTime updated_at) {
 		this.updated_at = updated_at;
 	}
 

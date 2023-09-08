@@ -11,9 +11,8 @@ Spring Bootを使用したRssリーダー
 	Botの構造上**ブランチを切ったら一度その時点でリモートにpushする**こと
 　　
 * コミットメッセージは`Semantic Commit Messages`に準拠する
-　　
-　　
- この項目は運用に問題が発生した時点で随時更新する
+  
+この項目は運用に問題が発生した時点で随時更新する
 
 #### Links
 * [Semantic Commit Messages](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)

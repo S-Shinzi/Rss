@@ -4,8 +4,5 @@ bin/
 # build folder is unnecessary
 build/
 
-# password file
-rss-reader/src/main/resources/static/js/app.js
-
 # ip address is listed
-rss-reader/src/main/resources/application.properties
+src/main/resources/application.properties

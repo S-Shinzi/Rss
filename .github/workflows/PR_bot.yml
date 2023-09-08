@@ -5,9 +5,14 @@ on:
   push:
     branches-ignore:
       - "master"
+    tags:
+      - "*"
+    workflow_dispatch:
+
 env:
   BASE_BRANCH: master
   REVIEWER: S-Shinzi
+
 
 jobs:
   create_pr:

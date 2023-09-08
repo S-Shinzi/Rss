@@ -1,0 +1,8 @@
+spring.datasource.url=jdbc:mysql://[DBaddress]:[port]/[DBname]
+spring.datasource.username=
+spring.datasource.password=
+spring.datasource.driverClassName=org.mariadb.jdbc.Driver
+
+spring.flyway.enabled=true
+
+http-header.userAgent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36

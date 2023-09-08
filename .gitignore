@@ -1,8 +1,8 @@
 # bin folder
-bin/
+/bin/
 
 # build folder is unnecessary
-build/
+/build/
 
 # ip address is listed
-src/main/resources/application.properties
+/src/main/resources/application.properties

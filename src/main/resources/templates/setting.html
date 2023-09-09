@@ -24,6 +24,16 @@
 					</tr>
 				</thead>
 				<tbody id="siteList"></tbody>
+				<tbody>
+					<tr>
+						<td><form id="add-Sites" action="/api/db/add-sites" method="post"></form></td>
+						<td><input type="text" name="name" form="add-Sites" required/></td>
+						<td><input type="text" name="rss_link" form="add-Sites" required/></td>
+						<td></td>
+						<td></td>
+						<td><input class="btn btn-primary" type="submit" value="Add" form="add-Sites"/></td>
+					</tr>
+				</tbody>
 			</table>
 		</div>
 		

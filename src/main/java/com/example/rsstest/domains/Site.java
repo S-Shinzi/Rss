@@ -4,14 +4,13 @@ import java.time.LocalDateTime;
 
 public class Site {
 	
-	//select * from sites;
-	
 	private int id;
 	private String name;
 	private String rss_link;
 	private LocalDateTime created_at;
 	private LocalDateTime updated_at;
 	
+	//select * from sites;
 	public Site(int id, String name, String rss_link, LocalDateTime created_at, LocalDateTime updated_at) {
 		this.id = id;
 		this.name = name;
@@ -19,6 +18,25 @@ public class Site {
 		this.created_at = created_at;
 		this.updated_at = updated_at;
 	}
+	
+	//update
+	public Site(int id, String name, String rss_link) {
+		this.id = id;
+		this.name = name;
+		this.rss_link = rss_link;
+	}
+	
+	//insert
+	public Site(String name, String rss_link) {
+		this.name = name;
+		this.rss_link = rss_link;
+	}
+	
+	//remove
+	public Site(int id) {
+		this.id = id;
+	}
+	
 	
 	public int getId() {
 		return id;

@@ -32,8 +32,6 @@ function displaySitesTable() {
 
 function displayUpdateSiteForm(id){
 	const targetRecord = document.getElementById(id);
-	
-	let html = "";
 
 	for (let i = 1; i < targetRecord.childNodes.length; i++){
 		if (i >= 3 && i <= 5) {

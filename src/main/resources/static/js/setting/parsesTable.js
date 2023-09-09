@@ -34,8 +34,6 @@ function displayParsesTable() {
 function displayUpdateParseForm(id){
 	const targetRecord = document.getElementById(id);
 	
-	let html = "";
-
 	for (let i = 1; i < targetRecord.childNodes.length; i++){
 		if (i >= 4 && i <= 6) {
 			continue;

@@ -2,12 +2,12 @@
 
 name: create PR by github-actions[bot]
 on:
-  push:
-    branches-ignore:
-      - "master"
-    tags:
-      - "*"
-    workflow_dispatch:
+#  push:
+#    branches-ignore:
+#      - "master"
+#    tags:
+#      - "*"
+  workflow_dispatch:
 
 env:
   BASE_BRANCH: master

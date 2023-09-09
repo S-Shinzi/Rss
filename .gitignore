@@ -6,3 +6,6 @@
 
 # ip address is listed
 /src/main/resources/application.properties
+
+# DB data
+/src/main/resources/db/migration/*Insert*

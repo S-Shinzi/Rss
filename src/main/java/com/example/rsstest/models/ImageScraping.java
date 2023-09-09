@@ -46,18 +46,13 @@ public class ImageScraping {
 		}
 		
 		try {
-			//System.out.println(urlToEx.returnParses(url, sites));
 			for (int i=0; i<urlToEx.returnParses(url, sites).size(); i++) {
 				org.jsoup.select.Elements elements = document.select(urlToEx.returnParses(url, sites).get(i).getElement_parse());	
-				
-				//System.out.println(elements);
-				//System.out.println(urlToEx.returnParses(url, sites).get(i).getElement_parse());
-				//System.out.println(urlToEx.returnParses(url, sites).get(i).getAttribute_parse());
-				
 				int imageCount = 0;
+				
 				for (Element element : elements) {
 					ImageModel model = new ImageModel(element.attr(urlToEx.returnParses(url, sites).get(i).getAttribute_parse()));
-					//System.out.println(element.attr(urlToEx.returnParses(url, sites).get(i).getAttribute_parse()));
+					
 					if (imageCount > 3) {
 						break;
 					}

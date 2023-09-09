@@ -10,6 +10,7 @@ public class Parse {
 	private LocalDateTime created_at;
 	private LocalDateTime updated_at;
 	
+	//select * from parses;
 	public Parse(int id, int site_id, String element_parse, String attribute_parse, LocalDateTime created_at, LocalDateTime updated_at) {
 		this.id = id;
 		this.site_id = site_id;
@@ -19,22 +20,26 @@ public class Parse {
 		this.updated_at = updated_at;
 	}
 	
-	public Parse(int id2, int site_id2, String element_parse2, String attribute_parse2) {
-		this.id = id2;
-		this.site_id = site_id2;
-		this.element_parse = element_parse2;
-		this.attribute_parse = attribute_parse2;
+	//update
+	public Parse(int id, int site_id, String element_parse, String attribute_parse) {
+		this.id = id;
+		this.site_id = site_id;
+		this.element_parse = element_parse;
+		this.attribute_parse = attribute_parse;
 	}
 	
-	public Parse(int site_id2, String element_parse2, String attribute_parse2) {
-		this.site_id = site_id2;
-		this.element_parse = element_parse2;
-		this.attribute_parse = attribute_parse2;
+	//insert
+	public Parse(int site_id, String element_parse, String attribute_parse) {
+		this.site_id = site_id;
+		this.element_parse = element_parse;
+		this.attribute_parse = attribute_parse;
 	}
 
-	public Parse(int id2) {
-		this.id = id2;
+	//remove
+	public Parse(int id) {
+		this.id = id;
 	}
+	
 
 	public int getId() {
 		return id;

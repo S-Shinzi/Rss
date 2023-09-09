@@ -19,12 +19,12 @@ public class GetRedirect {
 
   // get redirect url
   public static String getRedirectUrl(String srcUrl) throws IOException {
-    // 4xx ‚â 5xx ‚Å‚à—áŠO‚ª”­¶‚µ‚È‚¢‚Ì‚Å’ˆÓ
+	// 4xx ã‚„ 5xx ã§ã‚‚ä¾‹å¤–ãŒç™ºç”Ÿã—ãªã„ã®ã§æ³¨æ„
     HttpURLConnection con = (HttpURLConnection) new URL(srcUrl).openConnection();
     con.setRequestMethod("GET");
-    con.setInstanceFollowRedirects(false); // ©“®‚ÅƒŠƒ_ƒCƒŒƒNƒg‚µ‚È‚¢İ’è
+    con.setInstanceFollowRedirects(false); // è‡ªå‹•ã§ãƒªãƒ€ã‚¤ãƒ¬ã‚¯ãƒˆã—ãªã„è¨­å®š
     con.connect();
-    // HTTP ƒŒƒXƒ|ƒ“ƒX‚©‚ç Location ƒwƒbƒ_‚ğæ“¾
+    // HTTP ãƒ¬ã‚¹ãƒãƒ³ã‚¹ã‹ã‚‰ Location ãƒ˜ãƒƒãƒ€ã‚’å–å¾—
     String location = con.getHeaderField("location");
     con.disconnect();
     return location;

@@ -37,7 +37,6 @@ public class DbParsesController {
 	
 	@PostMapping("/api/db/remove-parses")
 	public String removeParses(@RequestParam int id) {
-		//System.out.println(id);
 		Parse parse = new Parse(id);
 		parseMapper.remove(parse);
 		return "redirect:/setting";
@@ -45,7 +44,6 @@ public class DbParsesController {
 	
 	@PostMapping("/api/db/update-parses")
 	public String updateParses(@RequestParam int id, @RequestParam int site_id, @RequestParam String element_parse, @RequestParam String attribute_parse) {
-		//System.out.println("id:" + id + " site_id:" + site_id + " element_parse:" + element_parse + " attribute_parse:" + attribute_parse);
 		Parse parse = new Parse(id, site_id, element_parse, attribute_parse);
 		parseMapper.update(parse);
 		return "redirect:/setting";

@@ -13,4 +13,13 @@
     <select id="all" resultMap="SiteResultMap">
         SELECT * FROM sites;
     </select>
+    <insert id="add" parameterType="com.example.rsstest.domains.Site">
+   		INSERT INTO sites(name, uq_rss_link) VALUES (#{name}, #{rss_link});
+    </insert>
+    <delete id="remove" parameterType="com.example.rsstest.domains.Site">
+    	DELETE FROM sites WHERE id = #{id};
+    </delete>
+    <update id="update" parameterType="com.example.rsstest.domains.Site">
+    	UPDATE sites SET name = #{name}, uq_rss_link = #{rss_link} WHERE id = #{id};
+    </update>
 </mapper>

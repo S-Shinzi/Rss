@@ -15,6 +15,7 @@ import org.jsoup.nodes.Element;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.rsstest.domains.HttpHeader;
 import com.example.rsstest.domains.ImageModel;
 import com.example.rsstest.domains.Site;
 
@@ -25,6 +26,9 @@ public class ImageScraping {
 	@Autowired
 	private UrlToEx urlToEx;
 	
+	@Autowired
+	HttpHeader httpHeader;
+	
 	public List<ImageModel> returnImages(String url, List<Site> sites) {
 		
 		org.jsoup.nodes.Document document = null;
@@ -32,7 +36,7 @@ public class ImageScraping {
 		List<ImageModel> imageModel = new ArrayList<ImageModel>();
 
 		try {
-			CloseableHttpClient client = HttpClients.createMinimal();
+			CloseableHttpClient client = HttpClients.custom().setUserAgent(httpHeader.getUserAgent()).build();
 			HttpUriRequest method = new HttpGet(url);
 			CloseableHttpResponse response = client.execute(method);
 			document = Jsoup.parse(EntityUtils.toString(response.getEntity(), "UTF-8"));
